@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+{% block content %}
+    <div class='row'>
+        <div class='col-sm-6 col-sm-offset-3'>
+            <form method= 'POST' action='/'>
+                {% include 'partials/locations_form.html' %}
+                <!-- BUTTON -->
+                <div class='form-group'>
+                    <button class='btn btn-primary' type='submit'>Save Locations</button>
+                    <div class='form-group'>
+                        <button class='btn btn-primary' type='delete'>Delete Locations</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</html>
+{% endblock %}
