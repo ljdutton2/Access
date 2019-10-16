@@ -21,13 +21,10 @@ location_data = {
     "arrival": "555 Post street, 94102 San Francisco"
 }
 
-
-map = folium.Map(location=(10.3000, -84.8167),zoom_start=13)
-map.save('map_index.html')
-
-@app.route('/')
+@app.route('/', methods=["POST"])
 def home():
-    return render_template('index.html',locations=locations.find())
+    return render_template('locations_index.html',locations=locations.find())
+    
 
 @app.route('/add',methods=['POST'])
 def location_new(): 
@@ -37,28 +34,16 @@ def location_new():
         }
         items = locations.find()
         location_id = locations.insert_one(location_data).location_id
-        map = folium.Map(location=(10.3000, -84.8167),zoom_start=13)
-        map.save('map_index.html')
+        #map = folium.Map(location=(10.3000, -84.8167),zoom_start=13)
+        #map.save('map_index.html')
         print(location_id)
         return redirect(url_for('location_save',location_id=location_id))
 
-@app.route('/save')
+@app.route('/save', methods=["POST"])
 def location_save():
-    return render_template('locations_saved.html')
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
+    return render_template('map_index.html')
+map = folium.Map(location=(10.3000, -84.8167),zoom_start=13)
+map.save('map_index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
