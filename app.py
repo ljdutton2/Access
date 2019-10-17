@@ -57,7 +57,7 @@ def location_save():
              folium.Marker([departure_lat,departure_long], popup='Departure').add_to(map)
              folium.Marker([arrival_lat,arrival_long], popup='Arrival').add_to(map)
              locations.insert_many(location_data).location_id
-             route = locations.find_one({'_id': ObjectId(location_id)})
+             route = locations.find_one({'_id': ObjectId(locationgit _id)})
             
         # mark corrdinates
        
@@ -76,9 +76,6 @@ def location_save():
         
        
         map.save('templates/map_index.html')
-        #return render_template('map_index.html')
-        global map_obj
-        return map_obj.get_root().render()
-    
+        return render_template('map_index.html')
 if __name__ == '__main__':
     app.run(debug=True)
