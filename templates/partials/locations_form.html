@@ -3,16 +3,25 @@
     <legend>Add saved locations</legend>
     <!-- departure -->
     <div class='form-group'>
-        <label for='departure'>Departure location:</label><br>
-        <input class='form-control' id='departure' type='text' name='departure' value='{{ locations.departure }}'/>
+        <label for='departure_lat'>Departure latitude coordinates:</label><br>
+        <input class='form-control' id='departure_lat' type='text' name='departure_lat' value='{{ locations.departure_lat }}'/>
     </div>
+    
+    <div class='form-group'>
+            <label for='departure_long'>Departure longitude coordinates:</label><br>
+            <input class='form-control' id='departure_long' type='text' name='departure_long' value='{{ locations.departure_long }}'/>
+        </div>
 
     <!-- arrival -->
     <div class='form-group'>
-        <label for='arrival'>arrival location:</label><br>
-        <input class='form-control' id='arrival' type='text' name='arrival' value='{{ locations.arrival }}'/>
+        <label for='arrival_lat'>Arrival Latitude Coordinates: </label><br>
+        <input class='form-control' id='arrival_lat' type='text' name='arrival_lat' value='{{ locations.arrival_lat }}'/>
     </div>
 
+    <div class='form-group'>
+            <label for='arrival_long'>Arrival Longitude Coordinates: </label><br>
+            <input class='form-control' id='arrival_long' type='text' name='arrival_long' value='{{ locations.arrival_long }}'/>
+        </div>
 
 
     </div>
