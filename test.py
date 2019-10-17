@@ -4,4 +4,3 @@ for coordinates in database:
     folium.Marker(coordinates)
 
 save
-        
