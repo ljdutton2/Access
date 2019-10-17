@@ -76,6 +76,9 @@ def location_save():
         
        
         map.save('templates/map_index.html')
-        return render_template('map_index.html')
+        #return render_template('map_index.html')
+        global map_obj
+        return map_obj.get_root().render()
+    
 if __name__ == '__main__':
     app.run(debug=True)
