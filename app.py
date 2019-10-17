@@ -18,8 +18,7 @@ db = client.get_default_database()
 locations = db.locations
 
 location_data = {
-    "departure": "611 Jones street, 94102 San Francisco",
-    "arrival": "555 Post street, 94102 San Francisco"
+   
 }
 
 @app.route('/',methods=['GET'])
@@ -57,7 +56,8 @@ def location_save():
         for coordinates in items:
              folium.Marker([departure_lat,departure_long], popup='Departure').add_to(map)
              folium.Marker([arrival_lat,arrival_long], popup='Arrival').add_to(map)
-          
+             locations.insert_many(location_data).location_id
+             route = locations.find_one({'_id': ObjectId(location_id)})
             
         # mark corrdinates
        
